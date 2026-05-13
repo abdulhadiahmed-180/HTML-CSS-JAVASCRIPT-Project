@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+body {
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: #fafafa;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
+    background-color: #f7ffec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.calculator {
+    resize: horizontal;
+    overflow: auto;
+    width: min(90vw, 650px);
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+}
+
+.display-container {
+    padding: 1.5rem 1rem 0.5rem 1rem;
+    background-color: #ffffff;
+}
+
+.display {
+    min-height: 3rem;
+    color: #1f2937;
+    text-align: right;
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 1.2;
+    overflow-x: auto;
+    white-space: nowrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.display::-webkit-scrollbar {
+    display: none;
+}
+        
+.cursor {
+    color: #2563eb;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { visibility: visible; }
+    50% { visibility: hidden; }
+}
+        
+.input-history {
+    height: 1.5rem;
+    color: #6b7280;
+    font-size: 1.1rem;
+    text-align: right;
+    margin-bottom: 0.5rem;
+    min-height: 30px;
+}
+
+.error {
+    color: #ef4444; font-weight: 600;
+}
+
+.mode-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    background-color: #f7f9fa;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.custom-toggle {
+    display: flex;
+    background: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.mode-btn {
+    padding: 4px 8px;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.mode-active {
+    background-color: #fff;
+    color: #1f2937;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    background-color: #eeeeee;
+    padding: 1px;
+}
+
+button {
+    padding: 1rem 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    background-color: #ffffff;
+    color: #1f2937;
+    border: none;
+    transition: background-color 0.1s, transform 0.05s;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 0;
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
+button:hover {
+    background-color: #f3f4f6;
+}
+
+.func {
+    background-color: #f7f9fa;
+    color: #4b5563;
+    font-weight: 400;
+    font-size: 0.95rem;
+}
+
+.operator {
+    background-color: #ffffff;
+    color: #1f2937;
+    font-weight: 500;
+}
+
+#enter {
+    background-color: #2563eb;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+#enter:hover {
+    background-color: #1d4ed8;
+}
+
+
+
+/* ---------------------------
+    DARK MODE THEME COLORS
+--------------------------- */
+.dark {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --text: #e6edf3;
+    --text-dim: #9ba9b4;
+    --accent: #2563eb;
+    --border: #30363d;
+}
+
+.dark body {
+    background-color: var(--bg);
+}
+
+.dark .calculator {
+    background: var(--surface);
+    border-color: var(--border);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.dark .display-container {
+    background: var(--surface);
+}
+
+.dark .display {
+    color: var(--text);
+}
+
+.dark .input-history {
+    color: var(--text-dim);
+}
+
+.dark .mode-area {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.dark .func {
+    background-color: #1e242b;
+    color: var(--text-dim);
+}
+
+.dark button {
+    background-color: var(--surface);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+.dark button:hover {
+    background-color: #1b2229;
+}
+
+.dark #enter {
+    background-color: var(--accent);
+    color: white;
+}
+
+.dark .buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    background-color: #353535;
+    padding: 1px;
+}
+
+#themeToggle {
+    margin-left: auto;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 4px;
+}
